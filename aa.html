@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testando</title>
+</head>
+<body>
+    <form action="">
+        <label for="test">Digita aí:</label>
+        <input type="text" id="Num">
+        <input type="submit" id="mandar">
+    </form>
+</body>
+<script>
+    const btn = document.querySelector('#mandar');
+    btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        const numIndex = document.querySelector('#Num')
+        const value = numIndex.value;
+        console.log(value);
+    })
+</script>
+</html>
