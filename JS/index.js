@@ -17,11 +17,12 @@ btnSubmit.addEventListener("click", function(e) {
     tetaA = (arcA*180)/Math.PI; tetaB = (arcB*180)/Math.PI; tetaC = (arcC*180)/Math.PI
     xA = 0, xB = d1*Math.cos(arcA), xC = (d1*Math.sin(arcB))/Math.sin(arcC),
     yA = d1*Math.sin(arcA), yB = 0, yC = d1*Math.sin(arcA)
-    ctx.lineWidth = 4;
+    ctx.lineWidth = 2;
+    ctx.clearRect(0,0,750,750)
     ctx.moveTo(xB,yB) //B
     ctx.lineTo(xA,yA) //A
     ctx.lineTo(xC,yC) //C
-    ctx.lineTo(xB,yB) //Voltando
+    ctx.closePath()
     ctx.stroke();
 })
 function area(a, b, c) {
