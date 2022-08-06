@@ -40,8 +40,40 @@ btnSubmit.addEventListener("click", function(e) { //ações para fazer na hora q
     ctx.fill()
     ctx.stroke(); 
     console.log(area(d1/50,d2/50,d3/50) + "m²") //printando a área
-    console.log("D1: " +d1 + " D2: " +d2 + " D3: " +d3)
 })
+
+const btnSubmit2 = document.querySelector('#submit2Btn')
+btnSubmit2.addEventListener('click', function(e) {
+    e.preventDefault()
+    const tetaAIndex = document.querySelector('#NumtetaA')
+    const tetaBIndex = document.querySelector('#NumtetaB')
+    const tetaCIndex = document.querySelector('#NumtetaC')
+    tetaA = tetaAIndex.value
+    tetaB = tetaBIndex.value
+    tetaC = tetaCIndex.value
+    arcA = (tetaA*Math.PI)/180; arcB = (tetaB*Math.PI)/180; arcC = (tetaC*Math.PI)/180
+    d1 = 100
+    d2 = (d1*Math.sin(arcA))/Math.sin(arcC)
+    d3 = (d1*Math.sin(arcB))/Math.sin(arcC)
+    xA = 0, xB = d1*Math.cos(arcA), xC = (d1*Math.sin(arcB))/Math.sin(arcC), //Coordenadas por meio dos valores
+    yA = d1*Math.sin(arcA), yB = 0, yC = d1*Math.sin(arcA) //Detalhe: o xA e o yB são sempre 0 (para facilitar os cálculos)
+    if (xB < xA) {
+        xA = -xB
+        xB = 0
+        yA = d1*Math.sin(arcB)
+    }
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.clearRect(0,0,c.width,c.height) //Comando pra limpar o canvas
+    ctx.moveTo(xA,yA) //vértice A
+    ctx.lineTo(xB,yB) //vértice B
+    ctx.lineTo(xC,yC) //vértice C
+    ctx.closePath() //linha para o vértice B
+    ctx.fill()
+    ctx.stroke(); 
+    console.log(area(d1/50,d2/50,d3/50) + "m²") //printando a área
+})
+
 function area(a, b, c) {
     //Área (Fórmula de Herão)
     var s = (a+b+c)/2;

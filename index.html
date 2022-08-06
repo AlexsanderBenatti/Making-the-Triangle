@@ -8,20 +8,31 @@
     <div class="width-full-screen flex justify-center items-center mb-10">
       <h1 class="text-2xl font-bold">Triangulo</h1>
     </div>
-    <div class="w-full">
-      <form name="forms" class="space-y-1 width-fullscreen">
+    <div class="w-full grid grid-cols-2">
+      <form name="forms" class="space-y-1 width-fullscreen m-auto">
         <label for="fd1">d1:</label>
         <input type="number" id="Numd1" class="border-2 border-black"><br>
         <label for="fd2">d2:</label>
         <input type="number" id="Numd2" class="border-2 border-black"><br>
         <label for="fd3">d3:</label>
         <input type="number" id="Numd3" class="border-2 border-black"><br>
-        <input type="submit" id="submitBtn" class="border border-black px-3 rounded text-sm bg-red-500 font-bold text-white hover:bg-red-600">
+        <input type="submit" id="submitBtn" class="transition duration-200 border border-black px-3 rounded text-sm bg-red-500 font-bold text-white hover:bg-red-600">
         <label id="aviso" style="display: none" class="text-sm text-gray-600 italic">*Os valores informados não fazem um triângulo possível* <span class="text-sm text-red-600">(desigualdade triangular)</span></label>
+      </form>
+      <form name="forms2" class="space-y-1 width-fullscreen m-auto">
+        <label for="ftetaA">θA:</label>
+        <input type="number" id="NumtetaA" class="border-2 border-black"><br>
+        <label for="ftetaB">θB:</label>
+        <input type="number" id="NumtetaB" class="border-2 border-black"><br>
+        <label for="ftetaC">θC:</label>
+        <input type="number" id="NumtetaC" class="border-2 border-black"><br>
+        <input type="submit" id="submit2Btn"class="transition duration-200 border border-black px-3 rounded text-sm bg-indigo-600 font-bold text-white hover:bg-indigo-700">
+        <label id="aviso" style="display: none" class="text-sm text-gray-600 italic">*Os valores informados não fazem um
+          triângulo possível* <span class="text-sm text-red-600">(desigualdade triangular)</span></label>
       </form>
     </div>
     <div class="w-full flex justify-center">
-      <canvas id="canvas" width="750" height="750" style="padding: 2px">
+      <canvas id="canvas" width="600" height="600" class="absolute left-1/2 ml-[-20px] mt-10">
       </canvas>
     </div>
       <script src="JS/index.js"></script>
